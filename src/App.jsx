@@ -83,23 +83,27 @@ class App extends React.Component {
           const lines = reader.result.split("\n");
           const headers = lines[0].split(',');
           const currentLine = lines[1].split(',');
-          const textline = headers[0] + ' ' + currentLine[0] + '\n'+ headers[1] + ' ' + currentLine[1] + '\n'
-                            + headers[2] + ' ' + currentLine[2] + '\n'+ headers[3] + ' ' + currentLine[3] +  '\n'
-                            + headers[4] + ' ' + currentLine[4] + '\n'+ headers[5] + ' ' + currentLine[5] + '\n'
-                            + headers[6] + ' ' + currentLine[6] + '\n'+ headers[7] + ' ' + currentLine[7] + '\n'
-                            + headers[8] + ' ' + currentLine[8];
+          const textline = [];
+
+          for (let j = 0; j < headers.length; j++) {
+            if (j==0) {
+              textline[j] = (headers[j] + ' ' + currentLine[j] + '\n');
+            } 
+            else {
+              textline[j] = (textline[j-1]+ headers[j] + ' ' + currentLine[j] + '\n');
+            }
+          }
 
           this.setState({
-            text: textline
+            text: textline[headers.length-1]
           })
 
-          inference(textline).then( result => {
+          inference(textline[headers.length-1]).then( result => {
             this.setState({
               text : this.state.text,
               data:result[1],
               latency:result[0],
             });
-      
           })
 
         };
@@ -158,7 +162,6 @@ class App extends React.Component {
                 cols={60}
                 rows={20}
                 value={this.state.text}
-                // value={this.state.csvData}
                 onChange={this.onFileChange}
                 style={{ marginTop: 15, width: "50%" }}
             ></textarea> 
