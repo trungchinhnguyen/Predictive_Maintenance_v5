@@ -1,5 +1,5 @@
 import './App.css';
-import './App.scss';
+// import './App.scss';
 
 import axios from 'axios';
 import React from 'react';
@@ -73,9 +73,10 @@ class App extends React.Component {
           .then((res) => {
             console.log(res);
             })
-            .catch((err) => {
+          .catch((err) => {
                 console.error(err)
             })
+
         let reader = new FileReader();
 
         reader.onload = () => {
@@ -118,7 +119,7 @@ class App extends React.Component {
       <div className="App">
 
       <header className="App-header">   
-      <em>Precdictive Maintenance: Transformer Inference</em>
+      <em>Predictive Maintenance: Transformer Inference</em>
       <div><font size="2">If predictive result is true, based on uploading data, please check the components to prevent the system's failure in next step</font></div>
       <Chart  
         width={'400px'}

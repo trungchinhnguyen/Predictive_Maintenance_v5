@@ -226,8 +226,6 @@ export class BertTokenizer {
    * @param text text to be tokenized.
    */
   tokenize(text: string): number[] {
-    // Source:
-    // https://github.com/google-research/bert/blob/88a817c37f788702a363ff935fd173b6dc6ac0d6/tokenization.py#L311
 
     let outputTokens: number[] = [];
 
