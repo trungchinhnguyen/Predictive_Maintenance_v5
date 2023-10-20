@@ -33,11 +33,6 @@
 // });
 
 
-
-
-
-
-
 const express = require('express')
 const path = require('path')
 const dotenv = require('dotenv')
@@ -79,3 +74,4 @@ app.delete("/upload", (req, res) => {
     console.log(`File deleted`)
     return res.status(200).json({ result: true, msg: 'file deleted' });
 });
+
