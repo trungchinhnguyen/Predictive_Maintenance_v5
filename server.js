@@ -18,6 +18,6 @@ app.delete("/upload", (req, res) => {
     return res.status(200).json({ result: true, msg: 'file deleted' });
 });
 
-app.listen(3000, () => {
-    console.log(`Server running on port 3000`)
+app.listen(8080, () => {
+    console.log(`Server running on port 8080`)
 });

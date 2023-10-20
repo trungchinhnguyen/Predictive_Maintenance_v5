@@ -68,7 +68,7 @@ class App extends React.Component {
 
   onFileUpload=() => {
 
-    axios.post('/upload', {file: (this.state.selectedFile, this.state.selectedFile.name)}
+    axios.post('http://localhost:8080/upload', {file: (this.state.selectedFile, this.state.selectedFile.name)}
           )
           .then((res) => {
             console.log(res);
