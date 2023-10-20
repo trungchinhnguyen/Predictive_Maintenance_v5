@@ -1,5 +1,5 @@
 import './App.css';
-// import './App.scss';
+import './App.scss';
 
 import axios from 'axios';
 import React from 'react';
@@ -120,7 +120,7 @@ class App extends React.Component {
 
       <header className="App-header">   
       <em>Predictive Maintenance: Transformer Inference</em>
-      <div><font size="2">If predictive result is true, based on uploading data, please check the components to prevent the system's failure in next step</font></div>
+      <div><font size="2">If predictive result is true, based on uploading data, please check the components to prevent the system's failure in next period</font></div>
       <Chart  
         width={'400px'}
         height={'200px'}
